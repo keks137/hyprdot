@@ -41,6 +41,7 @@ HYPRTEMP="${XDG_CONFIG_HOME:-$HOME/.cache}"/hyprdot
 HYPRDOT="${XDG_CONFIG_HOME:-$HOME/.config}"/hypr
 
 git clone https://github.com/keks137/hyprdot.git $HYPRTEMP
+rm -rf $HYPRDOT
 mv $HYPRTEMP $HYPRDOT
 rm -rf $HYPRTEMP
 
