@@ -11,3 +11,9 @@ fi
 
 echo "Hello"
 
+while true; do
+	printf "${INFO} Current keyboard layout is ${ORANGE}$layout${RESET}\n"
+	read -p "${CAT} Is this correct? [y/n] " keyboard_layout
+
+git clone https://github.com/keks137/hyprdot.git "${XDG_CONFIG_HOME:-$HOME/.cache}"/hyprdot
+cd "${XDG_CONFIG_HOME:-$HOME/.cache}"/hyprdot
