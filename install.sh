@@ -27,8 +27,8 @@ printf "${ORANGE}Hello${Reset}\n"
 
 while true; do
 	printf "\n${WARN} ${YELLOW}This will override your current Hyprland configs. Make sure to make a backup, if you want to keep them!\n ${RESET}"
-	read -p "${CAT} Confirm? [y/n] " backup_confirmed
-	case $backup_confirmed in
+	read -p "${CAT} Confirm? [y/n] " backup_confirmation
+	case $backup_confirmation in
 		[yY])
 			break ;;
 		[nN])
@@ -45,3 +45,21 @@ rm -rf $HYPRDOT
 mv $HYPRTEMP $HYPRDOT
 rm -rf $HYPRTEMP
 
+while true; do
+	printf "\n${NOTE} Also install my Waybar config? [Recommended] (Will once again delete current configs)\n ${RESET}"
+	read -p "${CAT} Confirm? [y/n] " waybar_confirmation
+	case $waybar_confirmation in
+		[yY])
+			WAYBARTEMP="${XDG_CONFIG_HOME:-$HOME/.cache}"/waybartemp
+			WAYBARDOT="${XDG_CONFIG_HOME:-$HOME/.config}"/waybar
+			git clone https://github.com/keks137/waybardot.git $WAYBARTEMP
+			rm -rf $WAYBARDOT
+			mv $WAYBARTEMP $WAYBARDOT
+			rm -rf $WAYBARTEMP
+			break ;;
+		[nN])
+			break ;;
+	esac
+done
+
+printf "${ORANGE}Install comleted!${Reset}\n"
