@@ -28,6 +28,7 @@ printf "${ORANGE}Hello${Reset}\n"
 while true; do
 	printf "\n${WARN} ${YELLOW}This will override your current Hyprland configs. Make sure to make a backup, if you want to keep them!\n ${RESET}"
 	read -p "${CAT} Confirm? [y/n] " backup_confirmation
+	echo ""
 	case $backup_confirmation in
 		[yY])
 			break ;;
@@ -48,6 +49,7 @@ rm -rf $HYPRTEMP
 while true; do
 	printf "\n${NOTE} Also install my Waybar config? [Recommended] (Will once again delete current configs)\n ${RESET}"
 	read -p "${CAT} Confirm? [y/n] " waybar_confirmation
+	echo ""
 	case $waybar_confirmation in
 		[yY])
 			WAYBARTEMP="${XDG_CONFIG_HOME:-$HOME/.cache}"/waybartemp
