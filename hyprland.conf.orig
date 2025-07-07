@@ -206,16 +206,14 @@ input {
     kb_rules =
     numlock_by_default = true
     follow_mouse = 1
-    kb_options= caps:escape
+<<<<<<< HEAD
     repeat_rate = 50 
     repeat_delay = 300
 
+=======
+    kb_options= caps:escape
+>>>>>>> refs/remotes/origin/master
     sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-    #repeat_rate = 50 
-    #repeat_delay = 300
-#
-    #kb_options= caps:escape
-    #sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 
     touchpad {
         natural_scroll = false
